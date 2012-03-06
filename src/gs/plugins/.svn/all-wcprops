@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/engine/!svn/ver/4/trunk/gs/plugins
+END
+BevelFilterPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/engine/!svn/ver/4/trunk/gs/plugins/BevelFilterPlugin.as
+END
+EndArrayPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/engine/!svn/ver/4/trunk/gs/plugins/EndArrayPlugin.as
+END
+HexColorsPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/engine/!svn/ver/4/trunk/gs/plugins/HexColorsPlugin.as
+END
+VolumePlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/engine/!svn/ver/4/trunk/gs/plugins/VolumePlugin.as
+END
+QuaternionsPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/engine/!svn/ver/4/trunk/gs/plugins/QuaternionsPlugin.as
+END
+ColorMatrixFilterPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/engine/!svn/ver/4/trunk/gs/plugins/ColorMatrixFilterPlugin.as
+END
+ColorTransformPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/engine/!svn/ver/4/trunk/gs/plugins/ColorTransformPlugin.as
+END
+BlurFilterPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/engine/!svn/ver/4/trunk/gs/plugins/BlurFilterPlugin.as
+END
+RoundPropsPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/engine/!svn/ver/4/trunk/gs/plugins/RoundPropsPlugin.as
+END
+GlowFilterPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/engine/!svn/ver/4/trunk/gs/plugins/GlowFilterPlugin.as
+END
+AutoAlphaPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/engine/!svn/ver/4/trunk/gs/plugins/AutoAlphaPlugin.as
+END
+TintPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/engine/!svn/ver/4/trunk/gs/plugins/TintPlugin.as
+END
+ShortRotationPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/engine/!svn/ver/4/trunk/gs/plugins/ShortRotationPlugin.as
+END
+DropShadowFilterPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/engine/!svn/ver/4/trunk/gs/plugins/DropShadowFilterPlugin.as
+END
+BezierPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/engine/!svn/ver/4/trunk/gs/plugins/BezierPlugin.as
+END
+BezierThroughPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/engine/!svn/ver/4/trunk/gs/plugins/BezierThroughPlugin.as
+END
+TweenPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/engine/!svn/ver/4/trunk/gs/plugins/TweenPlugin.as
+END
+FilterPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/engine/!svn/ver/4/trunk/gs/plugins/FilterPlugin.as
+END
+SetSizePlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/engine/!svn/ver/4/trunk/gs/plugins/SetSizePlugin.as
+END
+ScalePlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/engine/!svn/ver/4/trunk/gs/plugins/ScalePlugin.as
+END
+FastTransformPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/engine/!svn/ver/4/trunk/gs/plugins/FastTransformPlugin.as
+END
+FramePlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/engine/!svn/ver/4/trunk/gs/plugins/FramePlugin.as
+END
+FrameLabelPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/engine/!svn/ver/4/trunk/gs/plugins/FrameLabelPlugin.as
+END
+RemoveTintPlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/engine/!svn/ver/4/trunk/gs/plugins/RemoveTintPlugin.as
+END
+VisiblePlugin.as
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/engine/!svn/ver/4/trunk/gs/plugins/VisiblePlugin.as
+END
