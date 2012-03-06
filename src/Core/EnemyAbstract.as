@@ -180,7 +180,7 @@
 				if ((object.movie.x > _movie.x) && (moveStates.indexOf(stateMovingRight) >= 0))
 				{
 					_movie.x -= speed;
-					TweenMax.to(_movie, 0.1, { x: _movie.x -20 , y: _movie.y - 2, onComplete: moveAroundComplete, onCompleteParams: [object] } );
+					TweenMax.to(_movie, 0.1, { x: _movie.x , y: _movie.y - 20, onComplete: moveAroundComplete, onCompleteParams: [object] } );
 					moveAround = true;
 					
 				}
@@ -189,7 +189,7 @@
 				{
 					_movie.x += speed;					
 					
-					TweenMax.to(_movie, 0.1, { x: _movie.x +20, y: _movie.y - 2, onComplete: moveAroundComplete, onCompleteParams: [object] } );
+					TweenMax.to(_movie, 0.1, { x: _movie.x, y: _movie.y - 20, onComplete: moveAroundComplete, onCompleteParams: [object] } );
 					moveAround = true;
 					
 					
@@ -200,7 +200,7 @@
 				{
 					_movie.y -= speed;
 					
-					TweenMax.to(_movie, 0.1, { x: _movie.x + 2 , y: _movie.y + 60, onComplete: moveAroundComplete, onCompleteParams: [object] } );
+					TweenMax.to(_movie, 0.1, { x: _movie.x +  20 , y: _movie.y - 10, onComplete: moveAroundComplete, onCompleteParams: [object] } );
 					
 					moveAround = true;
 				
@@ -212,7 +212,7 @@
 					_movie.y += speed;
 					
 					moveAround = true;
-					TweenMax.to(_movie, 0.1, { x: _movie.x + 2, y: _movie.y + 60, onComplete: moveAroundComplete, onCompleteParams: [object] } );					
+					TweenMax.to(_movie, 0.1, { x: _movie.x + 20, y: _movie.y + 10, onComplete: moveAroundComplete, onCompleteParams: [object] } );					
 				}
 			}
 		}

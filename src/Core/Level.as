@@ -56,13 +56,17 @@
 		var lastEnemyGenerationTime: Number = -1000;
 		var enemyGeneraionInterval: Number = 1000;
 		
-		var bonusGenerationProb: Number = 70;
+		var bonusGenerationProb: Number = 20;
 		
 		var lifeBonusProb: Number = 30;
 		var ammoBonusProb: Number = 50;
 		var moneyBonusProb: Number = 100;
 		
 		var bonuses: ObjectList = new ObjectList();
+		
+		var tombGenerationProbability: Number = 40;
+		var maxTombsCount: Number = 7;
+		var tombsCount: Number = 0;
 		
 		
 		var mcBfBG: MovieClip;
@@ -114,6 +118,7 @@
 		{
 			///var dist: Number = Math.sqrt(Math.pow(Math.abs((rect.x + rect.width/2) - x), 2) + Math.pow(Math.abs((rect.y + rect.height/2) - y), 2));
 			var bonusesToRemove: ObjectList = new ObjectList();
+			var toY: Number = battlefield.height;
 			for (var i:int = 0; i < bonuses.count; i++) 
 			{
 				var mcBonus: MovieClip = MovieClip(bonuses.getItem(i));
@@ -134,6 +139,8 @@
 						{
 							player.life = player.totalLife;
 						}
+						
+						toY = battlefield.globalToLocal(new Point(0, 0)).y;
 					}
 					
 					if (bonusCN == Consts.BONUS_MONEY_CLASS)
@@ -170,7 +177,7 @@
 					
 					
 					
-					TweenMax.to(mcBonus, 2, { x: battlefield.width / 2, y: battlefield.height, alpha: 0, onComplete: handleBonusFlyComplete, onCompleteParams: [mcBonus] } );
+					TweenMax.to(mcBonus, 2, { x: battlefield.width / 2, y: toY, alpha: 0, onComplete: handleBonusFlyComplete, onCompleteParams: [mcBonus] } );
 					
 					bonusesToRemove.add(mcBonus);
 				}
@@ -329,9 +336,11 @@
 				
 				enemy.clip.visible = false;
 				
-				
+				var genBonus: Boolean = false;
 				if (canGenerateBonus())
 				{
+					
+					genBonus = true;
 					var mcBonus: MovieClip = generateBonus();
 					
 					if (mcBonus)
@@ -343,6 +352,27 @@
 						mcBonus.y = enemy.clip.y;
 					}
 				}
+				else
+				{
+					var rnd: int =  Utils.randRange(0, 100);
+					
+					if ((rnd <= tombGenerationProbability) && tombsCount < maxTombsCount)
+					{
+						tombsCount++;
+						rnd = Utils.randRange(0, Consts.TOMBS_CLASSES.length - 1);
+						var mcTomb: MovieClip = Utils.getClassMovieClip(Consts.TOMBS_CLASSES[rnd]);
+						
+						enemy.clip.parent.addChild(mcTomb);
+						mcTomb.x = enemy.clip.x;
+						mcTomb.y = enemy.clip.y;
+						
+						var so: SceneObject = new SceneObject();
+						so.movie = mcTomb;
+						
+						objects.add(so);
+					}
+				}
+				
 				
 				enemy.clip.parent.removeChild(enemy.clip);
 				
@@ -496,8 +526,24 @@ centerY + Math.sin(angle) * radius ;
 			
 			if (object.life <= 0)
 			{
-				objects.removeObject(object);
+				if (getQualifiedClassName(object.movie).indexOf("tomb") > -1)
+				{
+					tombsCount --;
+				}
 				
+				objects.removeObject(object);
+				var mcBonus: MovieClip = generateBonus();
+					
+				if (mcBonus)
+				{
+					var tf: TextField = mcBonus.getChildByName("i_tf_txt") as TextField;
+					tf.visible = false;
+					mcBonusesPlace.addChild(mcBonus);
+					mcBonus.x = object.movie.x;
+					mcBonus.y = object.movie.y;
+					
+					///object.movie.parent.addChild(mcBonus);
+				}				
 				////Exploder.explode(object.movie, 30, 200);
 				AnimationManager.animateExplosionDusty(object.movie);
 			}

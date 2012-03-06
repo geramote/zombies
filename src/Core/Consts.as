@@ -41,7 +41,7 @@ package Core
 		public static const BONUS_MONEY_COUNT: int = 100;
 		public static const BONUS_AMMO_COUNT: int = 2; // обоймы
 		
-		
+		public static const TOMBS_CLASSES: Array = ["mc_tomb_0", "mc_tomb_1", "mc_tomb_2", "mc_tomb_3", "mc_tomb_4"];
 		
 		public function Consts() 
 		{
