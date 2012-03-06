@@ -54,6 +54,11 @@
 			player.addWeapon(weapon);
 			weapon.addEventListener(Weapon.ON_SHOOT, handleShoot, false, 0, true);
 			
+			weapon = new WeaponTommy();
+			weapon.init();
+			player.addWeapon(weapon);
+			weapon.addEventListener(Weapon.ON_SHOOT, handleShoot, false, 0, true);
+			
 			///player.selectWeapon(weapon.type);
 		}
 		

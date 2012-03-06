@@ -15,7 +15,7 @@ package Core
 			
 			///mc_yellow_fat, mc_bullet_thin, mc_bullet_red_fat
 			bulletsType = "mc_bullet_yellow_normal";
-			bulletsLeft = 200;
+			bulletsLeft = 150;
 			lastFireTime = 0;
 			fireInterval = 100;
 			clipCapacity = 50;
@@ -23,6 +23,8 @@ package Core
 			_type = "";
 			bulletsInClip = clipCapacity;
 			damage = 1;
+			
+			bulletsScale = 0.4;
 		}		
 	}
 

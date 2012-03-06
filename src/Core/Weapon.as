@@ -38,12 +38,13 @@
 		var reloadTime: Number = 5000;		
 		var rechargeTimer: Timer;
 		
-		var mcShoot: MovieClip = null;
+		var _mcShoot: MovieClip = null;
 		
 		var sndClass: String = "shotgun.mp3";
 		
 		var maxBulletsCount: int = 1000;
 		
+		var bulletsScale: Number = 1;
 		
 		public function getOutPoint(): Point
 		{
@@ -98,6 +99,8 @@
 			var bullet: Bullet = new Bullet();
 			bullet.movie = Utils.getClassMovieClip(bulletsType);
 			bullet.damage = damage;
+			bullet.movie.scaleY = bulletsScale;
+			bullet.movie.scaleX = bullet.movie.scaleY;
 			return bullet;
 		}
 		
@@ -225,6 +228,16 @@
 		public function set state(value:String):void 
 		{
 			_state = value;
+		}
+		
+		public function get mcShoot():MovieClip 
+		{
+			return _mcShoot;
+		}
+		
+		public function set mcShoot(value:MovieClip):void 
+		{
+			_mcShoot = value;
 		}
 		
 		

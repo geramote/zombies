@@ -56,10 +56,10 @@
 		var lastEnemyGenerationTime: Number = -1000;
 		var enemyGeneraionInterval: Number = 1000;
 		
-		var bonusGenerationProb: Number = 20;
+		var bonusGenerationProb: Number = 100;
 		
 		var lifeBonusProb: Number = 30;
-		var ammoBonusProb: Number = 50;
+		var ammoBonusProb: Number = 100;
 		var moneyBonusProb: Number = 100;
 		
 		var bonuses: ObjectList = new ObjectList();
@@ -162,22 +162,44 @@
 							}
 						}
 						
+						if (player.weapons.count > 1)
+						{
+							weapon = Weapon(player.weapons.getItem(Utils.randRange(1, player.weapons.count-1)));
+						}
+						
+						
 						var cnt: int = Utils.randRange(1, Consts.BONUS_AMMO_COUNT) * weapon.clipCapacity;
 						
-						var mc: MovieClip = Utils.getClassMovieClip(weapon._bulletsType);
-						mc.scaleY = 0.3;
-						mc.scaleX = 0.3;
+						var mc: MovieClip = Utils.getClassMovieClip(weapon._movieClassName);
+						
+						mc.scaleY = (mcBonus.height / mc.height) / 2;
+						mc.scaleX = mc.scaleY;
+						
+						
+						var shoot: MovieClip = MovieClip(mc.getChildByName("i_mc_shoot"));
+						
+						if (shoot)
+						{
+							shoot.gotoAndStop(0);
+						}
+						
+						shoot.gotoAndStop(0);
 						
 						mcBonus.addChild(mc);
+						mc.gotoAndStop(0);
+						mc.stop();
+						mcBonus.gotoAndStop(0);
 						
 						tf.text = "+" + cnt.toString();
 						weapon.bulletsLeft += cnt;
+						
+						toY = battlefield.globalToLocal(new Point(200, 640)).y;
 						
 					}
 					
 					
 					
-					TweenMax.to(mcBonus, 2, { x: battlefield.width / 2, y: toY, alpha: 0, onComplete: handleBonusFlyComplete, onCompleteParams: [mcBonus] } );
+					TweenMax.to(mcBonus, 5, { x: battlefield.width / 2, y: toY, alpha: 0, onComplete: handleBonusFlyComplete, onCompleteParams: [mcBonus] } );
 					
 					bonusesToRemove.add(mcBonus);
 				}
